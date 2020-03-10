@@ -8,14 +8,11 @@ public class Main {
 
         HTTPRequests httpRequests = new HTTPRequests();
         Set<HttpRequest> requests = httpRequests.httpRequests();
-        ExecutorService executorService = Executors.newFixedThreadPool(3);
 
         for (HttpRequest request : requests) {
             AnotherThread anotherThread = new AnotherThread(request);
             Thread newThread = new Thread(anotherThread);
             newThread.start();
         }
-        executorService.shutdown();
     }
-
 }

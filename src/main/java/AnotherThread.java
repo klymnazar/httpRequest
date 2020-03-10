@@ -20,7 +20,7 @@ public class AnotherThread implements Runnable {
             HttpResponse<String> response = client.send(request,
                     HttpResponse.BodyHandlers.ofString());
 
-//            System.out.println(" - " + response.body());
+            System.out.println(" - " + response.body());
 
         } catch (IOException e) {
             e.printStackTrace();
